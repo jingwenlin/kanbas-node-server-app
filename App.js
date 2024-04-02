@@ -12,7 +12,7 @@ import UserRoutes from "./Kanbas/users/routes.js";
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://a5--cerulean-kringle-eccd3f.netlify.app",
     credentials: true,
 }));
 app.use(express.json());
