@@ -3,7 +3,7 @@
   "name": "kanbas-node-server-app-sp24-cs5610-02",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
