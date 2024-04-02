@@ -3,9 +3,10 @@
   "name": "kanbas-node-server-app-sp24-cs5610-02",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node App.js"
   },
   "author": "",
   "license": "ISC",
