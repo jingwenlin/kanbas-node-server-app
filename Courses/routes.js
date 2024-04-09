@@ -1,17 +1,24 @@
-import Database from "../Database/index.js";
+// import Database from "../Kanbas/Database/index.js";
+import * as dao from "./dao.js";
 export default function CourseRoutes(app) {
   //4.2.1 Retrieving Courses
-  app.get("/api/courses", (req, res) => {
-    const courses = Database.courses;
+  app.get("/api/courses", async(req, res) => {
+    const courses = await dao.findAllCourses();
     res.send(courses)
   });
 
    //lecture demonstration: able to retrieve a specific course,courseId as primary key
   //http://localhost:4000/api/courses/RS101
-  app.get("/api/courses/:courseId", (req, res) => {
-    const courses = Database.courses;
+  // app.get("/api/courses/:courseId", (req, res) => {
+  //   const courses = Database.courses;
+  //   const courseId = req.params.courseId;
+  //   const course = courses.find((course) => course._id === courseId);
+  //   res.send(course);
+  // });
+  app.get("/api/courses/:courseId", async (req, res) => {
     const courseId = req.params.courseId;
-    const course = courses.find((course) => course._id === courseId);
+    const course = await dao.findCourseById(courseId); // Database.courses;
+    // const course = courses.find((course) => course._id === courseId);
     res.send(course);
   });
 
