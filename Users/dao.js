@@ -9,6 +9,9 @@ export const createUser = (user) => {
     delete user._id
     return model.create(user);
 }
+//4.1
+export const findUserByUsername = (username) => model.findOne({ username: username });
+
 
 //3.5.3 
 export const updateUser = (id, user) =>
