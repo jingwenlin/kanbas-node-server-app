@@ -13,7 +13,14 @@ import UserRoutes from "./Users/routes.js";
 import mongoose from "mongoose";
 
 // mongoose.connect("mongodb://127.0.0.1:27017/kanbas-sp24-mon");
-mongoose.connect("mongodb://localhost:27017/kanbas-sp24-mon");
+// mongoose.connect("mongodb://localhost:27017/kanbas-sp24-mon");
+console.log("db value: " + process.env.DB_CONNECTION_STRING);
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas-sp24-mon'
+mongoose.connect(CONNECTION_STRING);
+
+
+
+
 
 const app = express();
 app.use(cors({
